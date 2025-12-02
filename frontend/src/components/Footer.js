@@ -7,23 +7,21 @@ const Footer = () => {
             <div className="container footer-content">
                 <div className="footer-section">
                     <h3>QSMUN</h3>
-                    <p>Zhvillimi i lidershipit, diplomacisë dhe mendimit kritik në gjimnazin "Qemal Stafa".</p>
+                    <p>Empowering the leaders of tomorrow through diplomacy and debate at Qemal Stafa High School.</p>
                 </div>
                 <div className="footer-section">
                     <h3>Na Kontaktoni</h3>
-                    <p>Për njoftimet më të fundit:</p>
+                    <p>Për çdo pyetje apo informacion, na shkruani:</p>
                     <a 
-                        href="https://chat.whatsapp.com/YOUR_INVITE_LINK_HERE" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="whatsapp-btn"
+                        href="mailto:mulgecierjona@gmail.com" 
+                        className="contact-btn"
                     >
-                        Join WhatsApp Group
+                        mulgecierjona@gmail.com
                     </a>
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Qemal Stafa Model United Nations. Të gjitha të drejtat e rezervuara.</p>
+                <p>&copy; {new Date().getFullYear()} Qemal Stafa Model United Nations. All rights reserved.</p>
             </div>
         </footer>
     );
