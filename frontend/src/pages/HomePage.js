@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import api from '../api/axiosConfig'; 
-import ProjectCard from '../components/ProjectCard'; // We will reuse this component for now
+// We will reuse this component for now
 import React, { useState, useEffect } from 'react';
 import api from '../api/axiosConfig';
 import EventCard from '../components/EventCard';
