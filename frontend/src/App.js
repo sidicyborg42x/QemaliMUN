@@ -1,31 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 function App() {
     return (
         <Router>
             <div className="App">
-                <header className="App-header">
-                    <h2>Welcome</h2>
-                    <nav>
-                        {/* You can add NavLink components here later */}
-                        <a href="/">Home</a>
-                        {/* <a href="/about">About</a> */}
-                        {/* <a href="/contact">Contact</a> */}
-                    </nav>
-                </header>
+                <Navbar />
                 <main>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
-                        {/* Define other routes here */}
+                        <Route path="/about" element={<AboutPage />} />
                     </Routes>
                 </main>
-                <footer className="App-footer">
-                    <p>© 2025 Your Name</p>
-                </footer>
-            </div>:
+                <Footer />
+            </div>
         </Router>
     );
 }

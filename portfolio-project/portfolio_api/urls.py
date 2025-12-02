@@ -1,15 +1,10 @@
-### this uses the DRF router to wire up the viewset
-
-
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ProjectViewSet
+from .views import EventViewSet
 
 router = DefaultRouter()
-router.register(r'projects', ProjectViewSet)
-
+router.register(r'events', EventViewSet)
 
 urlpatterns = [
-        path('', include(router.urls)),
-
+    path('', include(router.urls)),
 ]

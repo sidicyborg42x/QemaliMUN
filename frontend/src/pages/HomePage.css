@@ -1,11 +1,61 @@
-.home-page {
-    padding: 2rem;
+.hero {
+    background: linear-gradient(rgba(0, 85, 140, 0.9), rgba(0, 85, 140, 0.8)), url('https://images.unsplash.com/photo-1575320181282-9afab399332c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 8rem 0;
     text-align: center;
 }
 
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+.hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.btn-hero:hover {
+    background-color: #f0f0f0;
+}
+
+.events-section {
+    padding: 5rem 20px;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.loading-text, .no-events {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    padding: 3rem;
 }
