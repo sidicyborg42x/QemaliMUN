@@ -7,12 +7,12 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container navbar-content">
                 <Link to="/" className="navbar-logo">
-                    Qemali<span>MUN</span>
+                    QS<span>MUN</span>
                 </Link>
                 <div className="navbar-links">
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About Us</Link>
-                    {/* Add more links here later like /committees */}
+                    <Link to="/">Kreu</Link>
+                    <Link to="/about">Rreth Nesh</Link>
+                    <Link to="/game">Simulator</Link> {/* New Link */}
                 </div>
             </div>
         </nav>
