@@ -1,18 +1,15 @@
 .hero {
-    /* Updated background: Skanderbeg Square / Center of Tirana */
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.7)), 
-                url('./sheshiskenderbej.png');
+    /* Updated gradient overlay for depth */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.8)), url('./sheshiskenderbej.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Parallax effect */
     color: white;
-    padding: 8rem 0 10rem; /* Adjusted padding slightly */
+    padding: 10rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.hero h1 {
+}.hero h1 {
     font-size: 4.5rem;
     color: white;
     margin-bottom: 1.5rem;
