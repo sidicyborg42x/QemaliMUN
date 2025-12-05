@@ -1,11 +1,12 @@
 .hero {
-    /* Updated gradient overlay for depth */
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.8)), url('https://images.unsplash.com/photo-1575320181282-9afab399332c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    /* Updated background: Skanderbeg Square / Center of Tirana */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.7)), 
+                url('https://images.unsplash.com/photo-1601823984263-28b1974495bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed;
     color: white;
-    padding: 10rem 0;
+    padding: 8rem 0 10rem; /* Adjusted padding slightly */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -90,28 +91,26 @@
 
 /* Add to HomePage.css */
 
-/* The Container for the Badge */
 .hero-anniversary-badge {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    /* CHANGED: Reduced margin to bring it closer to QSMUN */
+    margin-bottom: 0.5rem; 
     text-decoration: none;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
-/* The Image Styling */
 .hero-anniversary-badge img {
     width: 120px;
     height: auto;
-    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6)); /* Golden Glow */
-    animation: pulse-gold 3s infinite; /* Continuous gentle pulse */
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
+    animation: pulse-gold 3s infinite;
 }
 
-/* The Text below the logo */
 .hero-anniversary-badge .badge-text {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem; /* Reduced top margin slightly too */
     font-family: 'Times New Roman', serif;
     color: var(--accent-color);
     font-weight: 700;
@@ -119,10 +118,9 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(5px); /* Subtle slide */
     transition: all 0.3s ease;
 }
-
 /* Hover Effects */
 .hero-anniversary-badge:hover {
     transform: translateY(-5px);

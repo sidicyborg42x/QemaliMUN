@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // 1. Import Link
+import { Link } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import EventCard from '../components/EventCard';
 import './HomePage.css';
-// 2. Import the logo
+// Import the logo
 import AnniversaryLogo from './qemal100.png'; 
 
 const HomePage = () => {
@@ -29,7 +29,7 @@ const HomePage = () => {
             <section className="hero">
                 <div className="container hero-content fade-in">
                     
-                    {/* 3. Add the Animated Anniversary Button */}
+                    {/* Anniversary Badge - Closer to Title */}
                     <Link to="/about" className="hero-anniversary-badge">
                         <img src={AnniversaryLogo} alt="100 Vjet Qemal Stafa" />
                         <span className="badge-text">100 Vjet Histori</span>
@@ -42,7 +42,6 @@ const HomePage = () => {
             </section>
 
             <section id="events" className="events-section container">
-                {/* ... (rest of the code remains the same) ... */}
                 <div className="section-header fade-in">
                     <h2>Eventet e Ardhshme</h2>
                     <p>Bashkohuni me ne në asamblenë e radhës.</p>
