@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutPage.css';
 // 1. Import the logo (adjust path if you put it directly in src)
-import AnniversaryLogo from 'qemal100.png'; 
+import AnniversaryLogo from './qemal100.png'; 
 
 const AboutPage = () => {
     return (

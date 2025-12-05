@@ -4,7 +4,7 @@ import api from '../api/axiosConfig';
 import EventCard from '../components/EventCard';
 import './HomePage.css';
 // 2. Import the logo
-import AnniversaryLogo from 'qemal100.png'; 
+import AnniversaryLogo from './qemal100.png'; 
 
 const HomePage = () => {
     const [events, setEvents] = useState([]);
