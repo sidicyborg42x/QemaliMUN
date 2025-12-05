@@ -1,16 +1,28 @@
 import React from 'react';
 import './AboutPage.css';
+// 1. Import the logo (adjust path if you put it directly in src)
+import AnniversaryLogo from '../assets/qemal-100.png'; 
 
 const AboutPage = () => {
     return (
         <div className="about-page container fade-in">
             <header className="about-header">
+                {/* 2. Add the Anniversary Badge */}
+                <div className="anniversary-badge-container">
+                    <img 
+                        src={AnniversaryLogo} 
+                        alt="100 Vjetori Gjimnazi Qemal Stafa" 
+                        className="anniversary-logo"
+                    />
+                    <span className="anniversary-label">1925 - 2025</span>
+                </div>
+
                 <h1>Rreth QSMUN</h1>
                 <p className="lead">Model United Nations i Gjimnazit "Qemal Stafa"</p>
             </header>
             
             <div className="about-content">
-                {/* What is MUN Section */}
+                {/* ... (rest of your existing content) ... */}
                 <section className="about-section">
                     <h2>Çfarë është MUN?</h2>
                     <p>
@@ -20,6 +32,8 @@ const AboutPage = () => {
                     </p>
                 </section>
 
+                {/* ... (Keep the rest of the sections exactly as they are) ... */}
+                
                 {/* Advantages Section */}
                 <section className="about-section">
                     <h2>Avantazhet e QSMUN</h2>
@@ -70,7 +84,7 @@ const AboutPage = () => {
                     <div className="leadership-grid">
                         <div className="leader-card">
                             <div className="leader-role">Presidente</div>
-                            <div className="leader-name">Erojna Mulgeci</div>
+                            <div className="leader-name">Erjona Mulgeci</div>
                         </div>
                         <div className="leader-card">
                             <div className="leader-role">Zëvëndës Presidente</div>

@@ -84,3 +84,72 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+
+
+/* Add to HomePage.css */
+
+/* The Container for the Badge */
+.hero-anniversary-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* The Image Styling */
+.hero-anniversary-badge img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6)); /* Golden Glow */
+    animation: pulse-gold 3s infinite; /* Continuous gentle pulse */
+}
+
+/* The Text below the logo */
+.hero-anniversary-badge .badge-text {
+    margin-top: 0.5rem;
+    font-family: 'Times New Roman', serif;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.hero-anniversary-badge:hover {
+    transform: translateY(-5px);
+}
+
+.hero-anniversary-badge:hover img {
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.9)); /* Stronger glow on hover */
+    animation: none; /* Stop pulsing on hover so it stays bright */
+}
+
+.hero-anniversary-badge:hover .badge-text {
+    opacity: 1; /* Show text on hover */
+    transform: translateY(0);
+}
+
+/* Keyframes for the Pulse Animation */
+@keyframes pulse-gold {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.7));
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+    }
+}

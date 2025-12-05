@@ -119,3 +119,62 @@
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+
+
+/* Add these new styles to AboutPage.css */
+
+.anniversary-badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    animation: float 6s ease-in-outKP infinite;
+}
+
+.anniversary-logo {
+    width: 180px; /* Adjust size as needed */
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.4)); /* Gold glow */
+    transition: transform 0.3s ease;
+}
+
+.anniversary-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.6));
+}
+
+.anniversary-label {
+    font-family: 'Times New Roman', serif; /* Classic font for history */
+    color: var(--accent-color);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0 10px;
+}
+
+.anniversary-label::before,
+.anniversary-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background-color: var(--accent-color);
+}
+
+.anniversary-label::before {
+    left: -35px;
+}
+
+.anniversary-label::after {
+    right: -35px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
