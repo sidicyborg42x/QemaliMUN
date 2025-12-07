@@ -140,7 +140,7 @@ Follow these steps to run the project locally.
 5.  Click **Add Event**. You can provide:
       * Title
       * Description
-      * Location (Defaults to "Ismail Qemali Hall")
+      * Location (Defaults to "Qemal Stafa Hall")
       * Date
       * Image
       * Registration Link
