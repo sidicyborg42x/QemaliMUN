@@ -145,13 +145,6 @@ Follow these steps to run the project locally.
       * Image
       * Registration Link
 
-### Playing the Simulator
-
-1.  On the website, navigate to **Simulator** via the Navbar.
-2.  Read the diplomatic scenarios presented.
-3.  Choose the best course of action to earn points and see if you have what it takes to be a top delegate.
-
------
 
 ## 🔧 Configuration
 
