@@ -1,52 +1,29 @@
+/* frontend/src/components/Footer.css */
 .footer {
-    background-color: var(--primary-color);
-    color: #cbd5e1;
-    padding: 5rem 0 2rem;
+    /* Use hardcoded values to ignore the theme-switch */
+    background-color: #0f172a !important; /* Always Midnight Blue */
+    color: #ffffff !important;           /* Always White Text */
+    padding: 3rem 0;
     margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer a {
+    color: #94a3b8 !important; /* Muted slate color */
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #fbbf24 !important; /* Accent Gold on hover */
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 4rem;
-    margin-bottom: 4rem;
-}
-
-.footer-section h3 {
-    color: var(--white);
-    margin-bottom: 1.5rem;
-}
-
-.footer-section p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.contact-btn {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    transition: all 0.3s;
-    text-decoration: none;
-    font-size: 1rem;
 }
 
-.contact-btn:hover {
-    background-color: var(--white);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 2rem;
-    font-size: 0.9rem;
+/* Ensure all sub-elements in footer stay white */
+.footer h3, .footer p, .footer span {
+    color: #ffffff !important;
 }
