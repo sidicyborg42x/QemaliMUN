@@ -1,98 +1,77 @@
+/* frontend/src/components/EventCard.css */
 .event-card {
-    background: var(--white);
-    border-radius: var(--radius);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-premium);
 }
 
 .event-image-container {
-    height: 220px;
-    background-color: #cbd5e1;
+    height: 240px;
     overflow: hidden;
     position: relative;
+    background: var(--bg-subtle);
 }
 
 .event-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.8s ease;
 }
 
 .event-card:hover .event-image-container img {
     transform: scale(1.1);
 }
 
-.event-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-}
-
 .event-content {
-    padding: 2rem;
+    padding: 2.5rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .event-date {
-    font-size: 0.8rem;
-    color: var(--accent-hover);
+    color: var(--accent-gold);
+    font-size: 0.85rem;
     font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .event-title {
-    margin-bottom: 0.75rem;
-    font-size: 1.5rem;
-    line-height: 1.3;
-    color: var(--primary-color);
-}
-
-.event-location {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-size: 1.75rem;
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
 .event-desc {
-    color: var(--text-light);
+    color: var(--text-muted);
     font-size: 1rem;
     margin-bottom: 2rem;
-    flex-grow: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .event-link {
-    color: var(--primary-color);
+    color: #fff;
     font-weight: 700;
-    font-size: 1rem;
-    margin-top: auto;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-top: auto;
 }
 
 .event-link:hover {
-    color: var(--accent-hover);
-    gap: 0.75rem; /* Slide arrow effect */
+    color: var(--accent-gold);
+    gap: 1rem;
 }

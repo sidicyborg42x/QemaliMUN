@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+// frontend/src/components/Navbar.js
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-content">
                 <Link to="/" className="navbar-logo">
                     QS<span>MUN</span>
                 </Link>
 
-                {/* Hamburger Icon for Mobile */}
-                <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
                 </div>
 
-                {/* Links - Pushed to the right */}
                 <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
                     <Link to="/" onClick={() => setIsMenuOpen(false)}>Kreu</Link>
                     <Link to="/about" onClick={() => setIsMenuOpen(false)}>Rreth Nesh</Link>

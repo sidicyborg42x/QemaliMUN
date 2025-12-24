@@ -1,52 +1,15 @@
 /* frontend/src/App.css */
-:root {
-  /* Richer, clearer dark tones */
-  --bg-primary: #0a0c12;   
-  --bg-secondary: #161b22; 
-  --text-primary: #ffffff;
-  --text-secondary: #94a3b8; 
-  
-  /* Vibrant Gold with better contrast */
-  --accent-gold: #eab308;    
-  --accent-gold-hover: #facc15; 
-  
-  /* Smoothness Variables */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 32px; /* Extra round for that "smooth" feel */
-  --transition-soft: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  --glass-effect: blur(16px) saturate(180%);
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+main {
+  flex-grow: 1;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1250px;
-  margin: 0 auto;
-}
-
-/* Smooth Reveal Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: smoothReveal 1s forwards;
-}
-
-@keyframes smoothReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Ensure sections have consistent breathing room */
+section {
+  padding: 100px 0;
 }
