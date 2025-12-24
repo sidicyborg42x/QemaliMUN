@@ -1,34 +1,25 @@
 /* frontend/src/components/Navbar.css */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 0; width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
-    transition: var(--transition);
-    background: transparent;
+    transition: var(--transition-smooth);
 }
 
-/* Scrolled State */
 .navbar.scrolled {
+    padding: 0.8rem 0;
     background: var(--glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 1rem 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
 }
 
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .navbar-logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 900;
     color: #fff;
+    letter-spacing: -1px;
 }
 
 .navbar-logo span { color: var(--accent-gold); }
@@ -41,37 +32,22 @@
 
 .navbar-links a {
     color: var(--text-muted);
+    font-size: 0.9rem;
     font-weight: 500;
-    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .navbar-links a:hover { color: #fff; }
 
 .nav-apply-btn {
-    background: var(--accent-gold);
-    color: #000 !important;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 700 !important;
+    background: var(--bg-surface-3);
+    border: 1px solid var(--border-bright);
+    color: #fff !important;
+    padding: 8px 20px !important;
+    border-radius: var(--radius-full);
 }
 
-/* Mobile Toggle */
-.hamburger { display: none; cursor: pointer; }
-.bar { display: block; width: 25px; height: 2px; background: #fff; margin: 5px; transition: 0.3s; }
-
-@media (max-width: 768px) {
-    .hamburger { display: block; }
-    .navbar-links {
-        position: absolute;
-        top: 100%;
-        right: 2rem;
-        background: var(--bg-surface);
-        flex-direction: column;
-        width: 250px;
-        padding: 2rem;
-        border-radius: var(--radius-xl);
-        display: none;
-        border: 1px solid var(--border);
-    }
-    .navbar-links.open { display: flex; }
+.nav-apply-btn:hover {
+    background: var(--accent-gold);
+    color: #000 !important;
 }
