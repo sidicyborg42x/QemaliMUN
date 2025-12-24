@@ -56,3 +56,49 @@
 .navbar-links a:hover::after {
     width: 100%;
 }
+
+.hamburger {
+    display: none; /* Hidden on Desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Mobile Responsiveness (Screen size < 768px) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    /* Transform Hamburger to 'X' when active */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .navbar-links {
+        position: fixed;
+        left: -100%; /* Hide menu off-screen */
+        top: 70px;   /* Height of your navbar */
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    .navbar-links.active {
+        left: 0; /* Slide menu in */
+    }
+}
