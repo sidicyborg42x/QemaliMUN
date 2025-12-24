@@ -1,23 +1,43 @@
-.App {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f4f4;
+/* frontend/src/App.css */
+:root {
+  --bg-primary: #0a0a0a;   
+  --bg-secondary: #141414; 
+  --bg-tertiary: #1f1f1f;  
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3; 
+  --accent-gold: #f0a500;    
+  --accent-gold-hover: #d18f00; 
+  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.7);
+  
+  /* Responsive Spacing */
+  --section-spacing: 80px;
+  --border-radius-lg: 12px;
+  --border-radius-md: 8px;
 }
 
-.App-header, .App-footer {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-    text-align: center;
+/* Base resets for mobile */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  /* Prevents horizontal scrolling on mobile */
+  overflow-x: hidden; 
 }
 
-.App-header nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+/* Make containers fluid */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-main {
-    flex-grow: 1;
+/* Responsive Headings */
+h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 40px;
+  }
 }
