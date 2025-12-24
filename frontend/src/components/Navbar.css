@@ -1,102 +1,58 @@
-/* frontend/src/components/Navbar.css */
 .navbar {
-    height: 85px;
-    background: rgba(2, 6, 23, 0.85); /* Dark Midnight Transparent */
-    backdrop-filter: blur(15px); /* Professional Blur */
-    -webkit-backdrop-filter: blur(15px);
-    position: fixed;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.25rem 0;
+    transition: all 0.3s ease;
 }
 
-.nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+.navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-logo {
-    font-size: 1.8rem;
+.navbar-logo {
+    font-size: 1.75rem;
     font-weight: 900;
-    color: #fff;
-    text-decoration: none;
+    color: var(--primary-color);
     letter-spacing: -1px;
 }
 
-.nav-logo span { color: var(--accent-color); }
+.navbar-logo span {
+    color: var(--accent-color);
+}
 
-/* DESKTOP VIEW: Wide and Airy */
-.nav-links {
+.navbar-links {
     display: flex;
-    align-items: center;
-    gap: 3.5rem; /* Wide spacing for PC elegance */
-    list-style: none;
+    gap: 2.5rem;
 }
 
-.nav-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 500;
+.navbar-links a {
+    color: var(--text-dark);
+    font-weight: 600;
     font-size: 1rem;
-    transition: 0.3s ease;
+    position: relative;
 }
 
-.nav-links a:hover { color: var(--accent-color); }
-
-.nav-apply-btn {
-    background: var(--accent-color);
-    color: #020617 !important;
-    padding: 10px 28px;
-    border-radius: 50px;
-    font-weight: 700 !important;
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
-/* MOBILE VIEW: Hidden on PC */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
+.navbar-links a:hover {
+    color: var(--primary-color);
 }
 
-.bar {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    transition: 0.4s ease-in-out;
-    border-radius: 4px;
-}
-
-/* MEDIA QUERY: The Mobile Transformation */
-@media (max-width: 992px) {
-    .nav-toggle { display: flex; }
-
-    .nav-links {
-        position: fixed;
-        top: 85px;
-        left: -100%; /* Slide out of view */
-        flex-direction: column;
-        background: #020617; /* Solid dark background for mobile menu */
-        width: 100%;
-        height: 100vh;
-        padding-top: 4rem;
-        gap: 3rem;
-        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .nav-links.active { left: 0; } /* Slide into view */
-
-    .nav-links a { font-size: 1.5rem; }
-
-    /* Hamburger Animation to X */
-    .nav-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .nav-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-    .nav-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.navbar-links a:hover::after {
+    width: 100%;
 }

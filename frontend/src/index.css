@@ -1,51 +1,74 @@
-/* frontend/src/index.css */
 :root {
-  --primary-dark: #020617;   /* Deepest Navy */
-  --accent-gold: #fbbf24;    /* Gold */
+  /* Modern Professional Palette for QSMUN */
+  --primary-color: #0f172a; /* Midnight Blue */
+  --primary-light: #1e293b;
+  --secondary-color: #334155;
+  --accent-color: #fbbf24; /* Warm Gold */
   --accent-hover: #d97706;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --glass-bg: rgba(15, 23, 42, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  
+  --background-light: #f8fafc;
+  --white: #ffffff;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --radius: 12px;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, sans-serif;
-  background-color: var(--primary-dark);
-  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  overflow-x: hidden;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* Centering container with proper desktop padding */
+h1, h2, h3, h4 {
+  color: var(--primary-color);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
 .container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-@media (max-width: 768px) {
-  .container { padding: 0 1.25rem; }
-}
-
-/* Reusable Button Style */
 .btn {
   display: inline-block;
-  padding: 0.8rem 2rem;
-  background: var(--accent-gold);
-  color: var(--primary-dark);
+  padding: 12px 28px;
+  background-color: var(--primary-color);
+  color: var(--white);
   border-radius: 50px;
-  font-weight: 700;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
   border: none;
   cursor: pointer;
-  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn:hover {
+  background-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.4);
-  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }
