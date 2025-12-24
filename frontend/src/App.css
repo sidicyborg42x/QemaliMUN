@@ -1,43 +1,41 @@
 /* frontend/src/App.css */
 :root {
-  /* Refined Palette */
-  --bg-primary: #050505;   
-  --bg-secondary: #0f1115; 
-  --bg-tertiary: #1a1d23;  
+  /* Premium Dark Theme Palette */
+  --bg-primary: #05070a;   
+  --bg-secondary: #0f172a; 
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8; 
-  --accent-gold: #d4af37;    /* More "metallic" gold */
-  --accent-gold-hover: #f0c419; 
-  --glass-bg: rgba(15, 17, 21, 0.8);
   
-  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+  /* Refined Gold - More metallic, less yellow */
+  --accent-gold: #d4af37;    
+  --accent-gold-hover: #f1c40f; 
+  --gold-glow: rgba(212, 175, 55, 0.3);
+  
+  /* Smooth Animations */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --section-spacing: clamp(4rem, 10vh, 8rem);
-  --border-radius-lg: 16px;
 }
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
+/* Base Body Improvements */
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden; 
+  -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  width: 92%;
-  max-width: 1300px;
-  margin: 0 auto;
+/* Global Fade-In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.8s forwards ease-out;
 }
 
-/* Global Button Refinement */
-.btn {
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
