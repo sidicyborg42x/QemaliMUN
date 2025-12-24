@@ -1,10 +1,9 @@
-from rest_framework import viewsets
-from .models import Event
-from .serializers import EventSerializer
+# portfolio-project/portfolio_api/views.py
+from rest_framework import viewsets, mixins
+from .models import Event, Application
+from .serializers import EventSerializer, ApplicationSerializer
 
-class EventViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    API endpoint that allows events to be viewed.
-    """
-    queryset = Event.objects.all().order_by('date')
-    serializer_class = EventSerializer
+# This view only allows POST requests (submitting the form)
+class ApplicationViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    queryset = Application.objects.all()
+    serializer_class = ApplicationSerializer

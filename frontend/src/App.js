@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import GamePage from './pages/GamePage'; // New Import
+import ApplyPage from './pages/ApplyPage';
 import './App.css';
 
 function App() {

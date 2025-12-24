@@ -1,7 +1,9 @@
+# portfolio-project/portfolio_api/serializers.py
 from rest_framework import serializers
-from .models import Event
+from .models import Event, Application # Import the new model
 
-class EventSerializer(serializers.ModelSerializer):
+class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Event
-        fields = ['id', 'title', 'description', 'location', 'date', 'image', 'registration_link']
+        model = Application
+        fields = ['id', 'full_name', 'email', 'school', 'grade', 'motivation', 'applied_at']
+        read_only_fields = ['id', 'applied_at']
