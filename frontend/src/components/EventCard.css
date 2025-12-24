@@ -1,51 +1,98 @@
-/* frontend/src/components/EventCard.css */
 .event-card {
-    background: white;
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius-smooth);
+    background: var(--white);
+    border-radius: var(--radius);
     overflow: hidden;
-    transition: var(--transition-main);
-    box-shadow: var(--shadow-silk);
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .event-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-lg);
 }
 
 .event-image-container {
     height: 220px;
-    background: var(--bg-slate);
+    background-color: #cbd5e1;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image-container img {
+    transform: scale(1.1);
+}
+
+.event-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
 }
 
 .event-content {
     padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .event-date {
     font-size: 0.8rem;
+    color: var(--accent-hover);
     font-weight: 700;
-    color: var(--accent-gold);
-    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
 }
 
 .event-title {
-    font-size: 1.4rem;
-    color: var(--primary-ink);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+.event-location {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .event-desc {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .event-link {
+    color: var(--primary-color);
     font-weight: 700;
-    color: var(--primary-ink);
-    text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-link:hover {
+    color: var(--accent-hover);
+    gap: 0.75rem; /* Slide arrow effect */
 }
