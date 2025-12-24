@@ -1,58 +1,85 @@
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    height: 80px;
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1.25rem 0;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.navbar-content {
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar-logo {
-    font-size: 1.75rem;
+.nav-logo {
+    font-size: 1.8rem;
     font-weight: 900;
-    color: var(--primary-color);
-    letter-spacing: -1px;
+    color: var(--white);
 }
 
-.navbar-logo span {
-    color: var(--accent-color);
-}
+.nav-logo span { color: var(--accent-color); }
 
-.navbar-links {
+.nav-menu {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
+    align-items: center;
 }
 
-.navbar-links a {
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 1rem;
-    position: relative;
+.nav-menu a {
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
-.navbar-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
+.nav-menu a:hover { color: var(--accent-color); }
+
+.nav-btn {
+    background: var(--accent-color);
+    color: var(--primary-color) !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700 !important;
 }
 
-.navbar-links a:hover {
-    color: var(--primary-color);
-}
+/* --- MOBILE ANIMATION --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--white);
+        transition: 0.3s;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 100vh;
+        transition: 0.3s;
+        padding-top: 2rem;
+    }
 
-.navbar-links a:hover::after {
-    width: 100%;
+    .nav-menu.active { left: 0; }
+    
+    /* Hamburger to X */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }

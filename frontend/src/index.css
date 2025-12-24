@@ -1,74 +1,72 @@
+/* frontend/src/index.css */
 :root {
-  /* Modern Professional Palette for QSMUN */
-  --primary-color: #0f172a; /* Midnight Blue */
-  --primary-light: #1e293b;
-  --secondary-color: #334155;
-  --accent-color: #fbbf24; /* Warm Gold */
+  /* Modern Luxury Palette (Dark Theme) */
+  --primary-color: #020617; /* Deepest Midnight */
+  --primary-light: #0f172a; 
+  --secondary-color: #1e293b;
+  --accent-color: #fbbf24;   /* Warm Gold */
   --accent-hover: #d97706;
   
-  --background-light: #f8fafc;
+  --background-dark: #020617;
   --white: #ffffff;
-  --text-dark: #0f172a;
-  --text-light: #64748b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
   
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
   --radius: 12px;
+  
+  /* Fluid Spacing for Mobile */
+  --container-padding: clamp(1rem, 5vw, 2rem);
+  --section-padding: clamp(3rem, 10vh, 6rem);
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--background-light);
-  color: var(--text-dark);
+  background-color: var(--background-dark);
+  color: var(--text-main);
   line-height: 1.6;
+  /* Crucial for mobile: prevent horizontal "jiggle" */
+  overflow-x: hidden; 
 }
 
-h1, h2, h3, h4 {
-  color: var(--primary-color);
+h1, h2, h3 {
+  color: var(--white);
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.025em;
   margin-bottom: 1rem;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.2s ease;
-}
+/* Fluid Headings: Shrink on mobile, grow on desktop */
+h1 { font-size: clamp(2.2rem, 10vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 6vw, 3rem); }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--container-padding);
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 28px;
-  background-color: var(--primary-color);
-  color: var(--white);
+  padding: 14px 32px;
+  background-color: var(--accent-color);
+  color: var(--primary-color); /* Dark text on gold button */
   border-radius: 50px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.3);
+  background-color: var(--white);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+/* --- Mobile Fix: Ensure images and cards never overflow --- */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
 }
