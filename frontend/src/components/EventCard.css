@@ -1,50 +1,51 @@
 /* frontend/src/components/EventCard.css */
 .event-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
+    background: white;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-smooth);
     overflow: hidden;
-    transition: var(--transition);
+    transition: var(--transition-main);
+    box-shadow: var(--shadow-silk);
     height: 100%;
 }
 
 .event-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
     border-color: var(--accent-gold);
 }
 
 .event-image-container {
-    height: 200px;
-    background: var(--bg-alt);
+    height: 220px;
+    background: var(--bg-slate);
 }
 
 .event-content {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .event-date {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--accent-gold);
-    text-transform: uppercase;
     margin-bottom: 0.5rem;
 }
 
 .event-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    color: var(--primary-ink);
+    margin-bottom: 1rem;
 }
 
 .event-desc {
-    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
 }
 
 .event-link {
-    color: var(--primary);
-    text-decoration: none;
     font-weight: 700;
-    font-size: 0.85rem;
+    color: var(--primary-ink);
+    text-decoration: none;
+    font-size: 0.9rem;
 }

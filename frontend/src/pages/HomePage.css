@@ -1,45 +1,51 @@
 /* frontend/src/pages/HomePage.css */
 .hero {
-    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)), 
-                url('./sheshiskenderbej.png');
+    position: relative;
+    background: linear-gradient(to bottom, 
+        rgba(252, 252, 252, 0.4), 
+        var(--bg-silk) 95%), 
+        url('./sheshiskenderbej.png');
     background-size: cover;
     background-position: center;
-    padding: 160px 0 100px;
-    text-align: center;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
 }
 
 .hero-anniversary-badge {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-decoration: none;
 }
 
-/* Fixed "Normal" Logo Size */
+/* "Normal" Logo Sizing */
 .hero-anniversary-badge img {
-    width: 60px; /* Reduced from 100px+ */
+    width: 70px; 
     height: auto;
+    opacity: 0.9;
 }
 
 .badge-text {
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--accent-gold);
-    letter-spacing: 1.5px;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    color: var(--primary-ink);
     margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 550px;
+    margin-bottom: 3rem;
 }

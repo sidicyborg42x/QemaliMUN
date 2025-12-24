@@ -1,39 +1,36 @@
 /* frontend/src/components/Footer.css */
 .footer {
-    background: var(--bg-alt);
-    padding: 60px 0 30px;
-    border-top: 1px solid var(--border);
+    background: var(--bg-slate);
+    border-top: 1px solid var(--border-soft);
+    padding: 80px 0 40px;
+    margin-top: 120px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 4rem;
 }
 
 .footer-section h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.footer-section p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    max-width: 300px;
+    font-size: 1.2rem;
+    color: var(--primary-ink);
+    margin-bottom: 1.5rem;
 }
 
 .contact-btn {
     color: var(--accent-gold);
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
+    border-bottom: 1.5px solid var(--accent-gold);
 }
 
 .footer-bottom {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    border-top: 1px solid var(--border);
+    margin-top: 4rem;
     padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }

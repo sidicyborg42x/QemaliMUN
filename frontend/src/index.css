@@ -1,74 +1,70 @@
 /* frontend/src/index.css */
 :root {
-  /* Minimalist Light Palette */
-  --bg-body: #f8fafc;        /* Soft grey-white background */
-  --bg-white: #ffffff;      /* Pure white for cards/sections */
-  --bg-alt: #f1f5f9;         /* Light grey for alternating sections */
+  /* Silk Institutional Palette */
+  --bg-silk: #fcfcfc;        /* Main background */
+  --bg-slate: #f1f5f9;       /* Secondary sections */
+  --bg-glass: rgba(255, 255, 255, 0.85);
   
-  /* Refined Accents */
-  --primary: #1e293b;        /* Dark slate for text and depth */
-  --accent-gold: #c5a028;    /* More professional, less bright gold */
-  --accent-soft: rgba(197, 160, 40, 0.1);
+  --primary-ink: #0f172a;    /* Deep slate for text/headings */
+  --text-body: #334155;
+  --text-muted: #64748b;
   
-  /* Typography */
-  --text-main: #334155;      
-  --text-muted: #64748b;     
-  --text-light: #94a3b8;
-
-  /* Borders & Shadows */
-  --border: #e2e8f0;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05);
+  --accent-gold: #9a7b2c;    /* Deep, blended gold */
+  --border-soft: #e2e8f0;
   
-  /* System */
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smoothness System */
+  --radius-smooth: 12px;
+  --shadow-silk: 0 4px 20px -5px rgba(0,0,0,0.05);
+  --shadow-hover: 0 20px 40px -10px rgba(0,0,0,0.08);
+  --transition-main: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background-color: var(--bg-body);
-  color: var(--text-main);
-  line-height: 1.6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-silk);
+  color: var(--text-body);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
-h1, h2, h3 {
-  color: var(--primary);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+/* Global Smooth Fade-In Animation */
+.fade-in {
+  animation: smoothReveal 0.8s ease-out forwards;
+}
+
+@keyframes smoothReveal {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  padding: 10px 24px;
-  background: var(--primary);
+  padding: 12px 28px;
+  background: var(--primary-ink);
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: var(--transition);
+  transition: var(--transition-main);
   border: none;
-  cursor: pointer;
 }
 
 .btn:hover {
   background: var(--accent-gold);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }

@@ -1,44 +1,58 @@
 /* frontend/src/pages/AboutPage.css */
 .about-page {
-    padding: 120px 0;
+    padding: 140px 0 80px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 6rem;
 }
 
 .anniversary-logo {
-    width: 100px; /* Normal size */
-    margin-bottom: 1rem;
+    width: 90px;
+    margin-bottom: 1.5rem;
 }
 
 .about-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.about-section {
-    margin: 60px 0;
+    font-size: 3rem;
+    color: var(--primary-ink);
 }
 
 .about-section h2 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: var(--primary);
+    color: var(--primary-ink);
     border-left: 4px solid var(--accent-gold);
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
 
 .advantage-item {
-    background: var(--bg-white);
+    background: white;
     padding: 2rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-smooth);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-silk);
+    transition: var(--transition-main);
+}
+
+.advantage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .leader-card {
-    background: var(--bg-white);
-    padding: 2rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
+    background: var(--bg-slate);
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--radius-smooth);
     text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition-main);
+}
+
+.leader-card:hover {
+    background: white;
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-hover);
 }
 
 .leader-role {
