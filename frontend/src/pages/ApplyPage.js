@@ -5,7 +5,11 @@ import './ApplyPage.css';
 
 const ApplyPage = () => {
     const [formData, setFormData] = useState({
-        full_name: '', email: '', school: '', grade: '', motivation: ''
+        full_name: '',
+        email: '',
+        school: '',
+        grade: '',
+        motivation: ''
     });
     const [status, setStatus] = useState(null);
 
@@ -16,6 +20,7 @@ const ApplyPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // This sends data to your Render backend
             await axiosInstance.post('applications/', formData);
             setStatus({ type: 'success', text: 'Aplikimi u dërgua me sukses! Shihemi në QemaliMUN.' });
             setFormData({ full_name: '', email: '', school: '', grade: '', motivation: '' });
@@ -30,23 +35,59 @@ const ApplyPage = () => {
                 <h2>Apliko Tani</h2>
                 <p className="form-subtitle">Plotësoni të dhënat tuaja për t'u bërë pjesë e delegacionit.</p>
                 
-                {status && <div className={`status-message ${status.type}`}>{status.text}</div>}
+                {status && (
+                    <div className={`status-message ${status.type}`}>
+                        {status.text}
+                    </div>
+                )}
                 
                 <form onSubmit={handleSubmit} className="apply-form">
                     <div className="form-group">
-                        <input name="full_name" placeholder="Emri i Plotë" value={formData.full_name} onChange={handleChange} required />
+                        <input 
+                            name="full_name" 
+                            placeholder="Emri i Plotë" 
+                            value={formData.full_name} 
+                            onChange={handleChange} 
+                            required 
+                        />
                     </div>
                     <div className="form-group">
-                        <input name="email" type="email" placeholder="Email Adresa" value={formData.email} onChange={handleChange} required />
+                        <input 
+                            name="email" 
+                            type="email" 
+                            placeholder="Email Adresa" 
+                            value={formData.email} 
+                            onChange={handleChange} 
+                            required 
+                        />
                     </div>
                     <div className="form-group">
-                        <input name="school" placeholder="Shkolla / Gjimnazi" value={formData.school} onChange={handleChange} required />
+                        <input 
+                            name="school" 
+                            placeholder="Shkolla / Gjimnazi" 
+                            value={formData.school} 
+                            onChange={handleChange} 
+                            required 
+                        />
                     </div>
                     <div className="form-group">
-                        <input name="grade" placeholder="Viti i Studimeve" value={formData.grade} onChange={handleChange} required />
+                        <input 
+                            name="grade" 
+                            placeholder="Viti i Studimeve (p.sh. Klasa 11)" 
+                            value={formData.grade} 
+                            onChange={handleChange} 
+                            required 
+                        />
                     </div>
                     <div className="form-group">
-                        <textarea name="motivation" placeholder="Pse dëshironi të jeni pjesë e QemaliMUN?" rows="6" value={formData.motivation} onChange={handleChange} required />
+                        <textarea 
+                            name="motivation" 
+                            placeholder="Pse dëshironi të jeni pjesë e QemaliMUN?" 
+                            rows="6" 
+                            value={formData.motivation} 
+                            onChange={handleChange} 
+                            required 
+                        />
                     </div>
                     <button type="submit" className="submit-btn">Dërgo Aplikimin</button>
                 </form>
