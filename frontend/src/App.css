@@ -1,39 +1,50 @@
 /* frontend/src/App.css */
 :root {
-  /* Premium Dark Theme Palette */
-  --bg-primary: #05070a;   
-  --bg-secondary: #0f172a; 
-  --text-primary: #f8fafc;
+  /* Richer, clearer dark tones */
+  --bg-primary: #0a0c12;   
+  --bg-secondary: #161b22; 
+  --text-primary: #ffffff;
   --text-secondary: #94a3b8; 
   
-  /* Refined Gold - More metallic, less yellow */
-  --accent-gold: #d4af37;    
-  --accent-gold-hover: #f1c40f; 
-  --gold-glow: rgba(212, 175, 55, 0.3);
+  /* Vibrant Gold with better contrast */
+  --accent-gold: #eab308;    
+  --accent-gold-hover: #facc15; 
   
-  /* Smooth Animations */
-  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --section-spacing: clamp(4rem, 10vh, 8rem);
+  /* Smoothness Variables */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px; /* Extra round for that "smooth" feel */
+  --transition-soft: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --glass-effect: blur(16px) saturate(180%);
 }
 
-/* Base Body Improvements */
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
+* {
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Global Fade-In Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: reveal 0.8s forwards ease-out;
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-@keyframes reveal {
+.container {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Smooth Reveal Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: smoothReveal 1s forwards;
+}
+
+@keyframes smoothReveal {
   to {
     opacity: 1;
     transform: translateY(0);

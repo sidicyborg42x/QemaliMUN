@@ -1,77 +1,94 @@
 /* frontend/src/pages/HomePage.css */
 .hero {
-    /* Lightened Fade: 0.4/0.9 allows the image to show but keeps bottom dark for transition */
-    background: linear-gradient(to bottom, rgba(5, 7, 10, 0.4), rgba(5, 7, 10, 0.9)), 
+    /* Radial gradient: Clear in the middle, dark only at edges */
+    background: radial-gradient(circle at center, rgba(10, 12, 18, 0.1) 0%, rgba(10, 12, 18, 0.8) 100%), 
                 url('./sheshiskenderbej.png');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-top: 80px;
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-size: clamp(3.5rem, 12vw, 6.5rem); /* Larger, bolder typography */
     font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 1rem;
-    background: linear-gradient(to bottom, #ffffff, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin: 0.5rem 0;
+    line-height: 0.9;
+    /* High contrast drop shadow makes text pop off image */
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-    color: var(--text-secondary);
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    color: #fff;
+    font-weight: 500;
     margin-bottom: 3rem;
-    max-width: 800px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    max-width: 600px;
 }
 
+/* Modern Rounded Badge */
 .hero-anniversary-badge {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 12px 28px;
-    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 25px;
+    border-radius: 100px;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     margin-bottom: 2rem;
-    backdrop-filter: blur(5px);
     text-decoration: none;
-    animation: float 4s ease-in-out infinite;
+    transition: var(--transition-soft);
 }
 
-.hero-anniversary-badge img { width: 45px; height: auto; }
-.badge-text { color: var(--accent-gold); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+.hero-anniversary-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
 
+.hero-anniversary-badge img { width: 35px; height: auto; filter: drop-shadow(0 0 8px var(--accent-gold)); }
+
+.badge-text { color: #fff; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; }
+
+/* The Hero Button - Large and Rounded */
 .btn-hero {
-    background: linear-gradient(135deg, var(--accent-gold), #b8860b);
-    color: black;
-    padding: 18px 48px;
-    font-size: 1rem;
+    background: #fff;
+    color: #000;
+    padding: 20px 50px;
+    font-size: 1.1rem;
     font-weight: 800;
-    border-radius: 8px;
+    border-radius: 50px;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition-smooth);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    letter-spacing: 1.5px;
+    transition: var(--transition-soft);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
-.btn-hero:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4); }
+.btn-hero:hover {
+    background: var(--accent-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(234, 179, 8, 0.4);
+}
+
+/* Event Section - Smooth Cards */
+.events-section { padding: 100px 0; }
+
+.section-header h2 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    color: #fff;
+    margin-bottom: 1rem;
+}
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 3rem;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
+/* Make sure your EventCard component uses var(--radius-md) for consistency */
