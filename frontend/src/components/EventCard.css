@@ -5,53 +5,73 @@
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
     height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-premium);
+}
+
+.event-image-container {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-subtle);
+}
+
+.event-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.event-card:hover .event-image-container img {
+    transform: scale(1.1);
+}
+
+.event-content {
+    padding: 2.5rem;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.event-card:hover {
-    transform: translateY(-12px);
-    border-color: rgba(234, 179, 8, 0.3);
-    box-shadow: var(--shadow-xl);
-}
-
-.event-image-container {
-    height: 260px;
-    overflow: hidden;
-}
-
-.event-image-container img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 1.2s ease;
-}
-
-.event-card:hover img { transform: scale(1.1); }
-
-.event-content {
-    padding: 3rem;
-    flex-grow: 1;
-}
-
 .event-date {
     color: var(--accent-gold);
-    font-weight: 800;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
     margin-bottom: 1rem;
 }
 
-.event-title { margin-bottom: 1.5rem; }
-
-.event-link {
-    margin-top: 2rem;
+.event-title {
+    font-size: 1.75rem;
     color: #fff;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
+    margin-bottom: 1rem;
 }
 
-.event-link:hover { color: var(--accent-gold); }
+.event-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.event-link {
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.event-link:hover {
+    color: var(--accent-gold);
+    gap: 1rem;
+}
