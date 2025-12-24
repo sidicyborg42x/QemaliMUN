@@ -1,3 +1,8 @@
+import axios from 'axios';
+
 const axiosInstance = axios.create({
-    baseURL: 'https://qsmun-backend.onrender.com/api/', 
+    // Replace this with your actual Render URL
+    baseURL: 'https://qemalimun-backend.onrender.com/api/', 
 });
+
+export default axiosInstance;
