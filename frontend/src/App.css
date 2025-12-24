@@ -1,43 +1,43 @@
 /* frontend/src/App.css */
 :root {
-  --bg-primary: #0a0a0a;   
-  --bg-secondary: #141414; 
-  --bg-tertiary: #1f1f1f;  
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3; 
-  --accent-gold: #f0a500;    
-  --accent-gold-hover: #d18f00; 
-  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.7);
+  /* Refined Palette */
+  --bg-primary: #050505;   
+  --bg-secondary: #0f1115; 
+  --bg-tertiary: #1a1d23;  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8; 
+  --accent-gold: #d4af37;    /* More "metallic" gold */
+  --accent-gold-hover: #f0c419; 
+  --glass-bg: rgba(15, 17, 21, 0.8);
   
-  /* Responsive Spacing */
-  --section-spacing: 80px;
-  --border-radius-lg: 12px;
-  --border-radius-md: 8px;
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --section-spacing: clamp(4rem, 10vh, 8rem);
+  --border-radius-lg: 16px;
 }
 
-/* Base resets for mobile */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  /* Prevents horizontal scrolling on mobile */
+  line-height: 1.6;
   overflow-x: hidden; 
 }
 
-/* Make containers fluid */
 .container {
-  width: 90%;
-  max-width: 1200px;
+  width: 92%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-/* Responsive Headings */
-h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); }
-h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
-
-@media (max-width: 768px) {
-  :root {
-    --section-spacing: 40px;
-  }
+/* Global Button Refinement */
+.btn {
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
