@@ -1,75 +1,112 @@
 .navbar {
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    position: fixed; /* Changed from sticky to fixed for better layering */
-    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
     padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
-.navbar-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-.navbar-logo span { color: var(--accent-gold); }
-
-.navbar-links {
+.navbar-content {
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
     align-items: center;
 }
 
-.navbar-links a {
-    color: var(--text-secondary);
+.navbar-logo {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #1a1a1a;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    letter-spacing: -1px;
+}
+
+.navbar-logo span {
+    color: #f0a500; /* Your gold color */
+}
+
+/* Desktop Links - Right Aligned */
+.navbar-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    margin-left: auto; /* This pushes the links to the right */
+}
+
+.navbar-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-.navbar-links a:hover { color: white; }
+.navbar-links a:hover {
+    color: #f0a500;
+}
 
-/* Special style for the Apply link */
 .nav-apply-btn {
-    background: var(--accent-gold);
-    color: var(--bg-primary) !important;
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-weight: 700 !important;
+    background-color: #f0a500;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease !important;
+}
+
+.nav-apply-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hamburger Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .menu-toggle {
+    .hamburger {
         display: flex;
-        flex-direction: column;
-        gap: 6px;
-        cursor: pointer;
     }
-    .menu-toggle span {
-        width: 25px;
-        height: 2px;
-        background: white;
-        transition: 0.3s;
-    }
+
+    /* Transform hamburger to "X" when open */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
     .navbar-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg-secondary);
+        position: fixed;
+        left: -100%;
+        top: 70px;
         flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
-        transform: translateY(-150%);
-        transition: transform 0.4s ease;
+        background-color: white;
+        width: 100%;
+        height: calc(100vh - 70px);
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding-top: 2rem;
+        margin-left: 0;
     }
-    .navbar-links.show { transform: translateY(0); }
+
+    .navbar-links.open {
+        left: 0;
+    }
+
+    .navbar-links a {
+        font-size: 1.2rem;
+    }
 }

@@ -1,82 +1,89 @@
-/* frontend/src/pages/HomePage.css */
-
 .hero {
-    /* Improved overlay: Darker at the bottom to make the "Explore Events" button pop */
-    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 1)), 
+    /* Lighter Fade: Changed from 0.95/0.8 to 0.5/0.3 */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.3)), 
                 url('./sheshiskenderbej.png');
     background-size: cover;
     background-position: center;
-    min-height: 100vh; /* Full screen look */
+    background-attachment: scroll; 
+    color: white;
+    padding: clamp(5rem, 15vh, 10rem) 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 85vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 80px; /* Space for fixed navbar */
 }
 
-.hero-content {
-    max-width: 900px;
-    text-align: center;
+/* Parallax for Desktop */
+@media (min-width: 1024px) {
+    .hero {
+        background-attachment: fixed;
+    }
 }
 
 .hero h1 {
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(to bottom, #fff 40%, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    /* Added stronger shadow for readability on lighter background */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    color: #f1f5f9;
+    font-weight: 400;
+    padding: 0 10px;
+    line-height: 1.5;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* Badge Refinement */
+.btn-hero {
+    background-color: #f0a500;
+    color: #0a0a0a;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-hero:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Badge Styling */
 .hero-anniversary-badge {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 12px 24px;
-    border-radius: 50px;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(5px);
+    margin-bottom: 1.5rem; 
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
 .hero-anniversary-badge img {
-    width: 40px; /* Smaller, more elegant icon style */
+    width: clamp(80px, 15vw, 110px);
     height: auto;
+    filter: drop-shadow(0 0 15px rgba(240, 165, 0, 0.5));
 }
 
 .badge-text {
-    color: var(--accent-gold);
-    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 0.8rem;
     letter-spacing: 1px;
-}
-
-/* Button Refinement */
-.btn-hero {
-    padding: 18px 48px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-}
-
-/* Grid Refinement */
-.events-grid {
-    display: grid;
-    /* This makes sure cards look good on tiny phones and ultrawide monitors */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-@media (max-width: 480px) {
-    .events-grid {
-        grid-template-columns: 1fr; /* Stack strictly on small phones */
-    }
+    margin-top: 5px;
+    color: #f0a500;
 }
