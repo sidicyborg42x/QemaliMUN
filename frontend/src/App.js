@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
-import GamePage from './pages/GamePage'; // New Import
-import ApplyPage from './pages/ApplyPage';
+import GamePage from './pages/GamePage';
+import ApplyPage from './pages/ApplyPage'; // New Import
 import './App.css';
 
 function App() {
@@ -17,7 +17,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/about" element={<AboutPage />} />
-                        <Route path="/game" element={<GamePage />} /> {/* New Route */}
+                        <Route path="/game" element={<GamePage />} />
+                        <Route path="/apply" element={<ApplyPage />} /> {/* New Route */}
                     </Routes>
                 </main>
                 <Footer />

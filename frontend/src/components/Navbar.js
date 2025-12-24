@@ -12,8 +12,8 @@ const Navbar = () => {
                 <div className="navbar-links">
                     <Link to="/">Kreu</Link>
                     <Link to="/about">Rreth Nesh</Link>
-                    <Link to="/game">Simulator</Link> {/* New Link */}
-                    <Link to="/apply">Apliko</Link>
+                    <Link to="/game">Simulator</Link>
+                    <Link to="/apply">Apliko</Link> {/* New Link */}
                 </div>
             </div>
         </nav>

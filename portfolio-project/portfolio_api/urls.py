@@ -1,9 +1,10 @@
-# portfolio-project/portfolio_api/urls.py
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from .views import EventViewSet, ApplicationViewSet
 
 router = DefaultRouter()
 router.register(r'events', EventViewSet)
-router.register(r'applications', ApplicationViewSet) # New endpoint: /api/applications/
+router.register(r'applications', ApplicationViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
