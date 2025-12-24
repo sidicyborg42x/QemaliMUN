@@ -1,72 +1,51 @@
 /* frontend/src/index.css */
 :root {
-  /* Modern Luxury Palette (Dark Theme) */
-  --primary-color: #020617; /* Deepest Midnight */
-  --primary-light: #0f172a; 
-  --secondary-color: #1e293b;
-  --accent-color: #fbbf24;   /* Warm Gold */
+  --primary-dark: #020617;   /* Deepest Navy */
+  --accent-gold: #fbbf24;    /* Gold */
   --accent-hover: #d97706;
-  
-  --background-dark: #020617;
-  --white: #ffffff;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-  --radius: 12px;
-  
-  /* Fluid Spacing for Mobile */
-  --container-padding: clamp(1rem, 5vw, 2rem);
-  --section-padding: clamp(3rem, 10vh, 6rem);
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: var(--background-dark);
+  background-color: var(--primary-dark);
   color: var(--text-main);
-  line-height: 1.6;
-  /* Crucial for mobile: prevent horizontal "jiggle" */
-  overflow-x: hidden; 
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  color: var(--white);
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  margin-bottom: 1rem;
-}
-
-/* Fluid Headings: Shrink on mobile, grow on desktop */
-h1 { font-size: clamp(2.2rem, 10vw, 4.5rem); }
-h2 { font-size: clamp(1.8rem, 6vw, 3rem); }
-
+/* Centering container with proper desktop padding */
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+  .container { padding: 0 1.25rem; }
+}
+
+/* Reusable Button Style */
 .btn {
   display: inline-block;
-  padding: 14px 32px;
-  background-color: var(--accent-color);
-  color: var(--primary-color); /* Dark text on gold button */
+  padding: 0.8rem 2rem;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
   border-radius: 50px;
   font-weight: 700;
-  text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.3);
-  background-color: var(--white);
-}
-
-/* --- Mobile Fix: Ensure images and cards never overflow --- */
-img, video, canvas {
-  max-width: 100%;
-  height: auto;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.4);
+  background: #fff;
 }

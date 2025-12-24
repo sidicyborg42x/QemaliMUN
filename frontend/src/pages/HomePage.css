@@ -1,123 +1,51 @@
 /* frontend/src/pages/HomePage.css */
-
 .hero {
-    /* Depth overlay with your image */
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.8)), 
-                url('./sheshiskenderbej.png');
-    background-size: cover;
-    background-position: center;
-    /* Removed fixed attachment for mobile (Parallax is buggy on phones) */
-    background-attachment: scroll; 
-    color: white;
-    /* Responsive padding: smaller on phones, larger on desktop */
-    padding: clamp(5rem, 15vh, 10rem) 1rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  background: linear-gradient(135deg, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.7) 100%), 
+              url('./sheshiskenderbej.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax looks amazing on PC */
 }
 
-/* Enable Parallax only for larger screens */
-@media (min-width: 1024px) {
-    .hero {
-        background-attachment: fixed;
-    }
+/* Disable Parallax for Mobile Performance */
+@media (max-width: 1024px) {
+  .hero { background-attachment: scroll; }
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
 }
 
 .hero h1 {
-    /* Fluid font size: scales from 2.2rem on mobile to 4.5rem on desktop */
-    font-size: clamp(2.2rem, 8vw, 4.5rem);
-    color: white;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  /* Fluid text: scales from 2.5rem to 5rem */
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
 }
 
-.hero-subtitle {
-    /* Fluid font size for subtitle */
-    font-size: clamp(1rem, 4vw, 1.4rem);
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
-    color: #cbd5e1;
-    font-weight: 300;
-    padding: 0 10px;
-    line-height: 1.5;
+.hero p {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.btn-hero {
-    background-color: var(--accent-gold); /* Using your gold color */
-    color: var(--bg-primary);
-    padding: 14px 36px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
+.hero-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
-.btn-hero:hover {
-    background-color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* --- ANNIVERSARY BADGE RESPONSIVENESS --- */
-
-.hero-anniversary-badge {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem; 
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.hero-anniversary-badge img {
-    /* Smaller logo on mobile, larger on desktop */
-    width: clamp(80px, 15vw, 130px);
-    height: auto;
-    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
-    animation: pulse-gold 3s infinite;
-}
-
-/* --- EVENTS SECTION RESPONSIVENESS --- */
-
-.events-section {
-    padding: clamp(3rem, 10vh, 6rem) 1rem;
-}
-
-.section-header h2 {
-    font-size: clamp(1.8rem, 6vw, 3rem);
-    color: var(--accent-gold);
-    margin-bottom: 1rem;
-}
-
-.events-grid {
-    display: grid;
-    /* Ensures items stack on mobile and go side-by-side on desktop */
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Animation for the Badge */
-@keyframes pulse-gold {
-    0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4)); }
-    50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.7)); }
-    100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4)); }
-}
-
-/* Mobile Tweak for Buttons */
-@media (max-width: 480px) {
-    .btn-hero {
-        width: 90%; /* Buttons take up more space on tiny phones */
-        padding: 16px;
-    }
+@media (max-width: 500px) {
+  .hero-btns { flex-direction: column; }
 }
