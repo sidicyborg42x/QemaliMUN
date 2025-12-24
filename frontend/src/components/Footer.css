@@ -1,7 +1,9 @@
+/* sidicyborg42x/qemalimun/frontend/src/components/Footer.css */
 .footer {
-    background-color: var(--primary-color);
-    color: #cbd5e1;
-    padding: 5rem 0 0; /* Reduced bottom padding since footer-bottom has its own */
+    /* Hardcoded dark color to ignore theme changes */
+    background-color: #0f172a !important; 
+    color: #cbd5e1 !important;
+    padding: 5rem 0 0;
     margin-top: auto;
 }
 
@@ -13,7 +15,7 @@
 }
 
 .footer-section h3 {
-    color: var(--white);
+    color: #ffffff !important; /* Always white */
     margin-bottom: 1.5rem;
 }
 
@@ -26,8 +28,8 @@
 .contact-btn {
     display: inline-flex;
     align-items: center;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+    background-color: #fbbf24; /* Always gold */
+    color: #0f172a !important;
     padding: 10px 24px;
     border-radius: 50px;
     font-weight: 700;
@@ -38,13 +40,14 @@
 }
 
 .footer-bottom {
-    text-align: center; /* This centers the text inside the div */
+    text-align: center; /* Centers the copyright text in the middle */
     border-top: 1px solid rgba(255,255,255,0.1);
     padding: 2rem 0;
-    font-size: 0.9rem;
     width: 100%;
 }
 
 .footer-bottom p {
-    margin: 0; /* Removes default paragraph margins for better centering */
+    margin: 0;
+    font-size: 0.9rem;
+    color: #94a3b8 !important;
 }
