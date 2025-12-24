@@ -1,19 +1,22 @@
 /* frontend/src/components/Navbar.css */
 .navbar {
     position: fixed;
-    top: 20px; /* Floats away from the top */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
-    background: rgba(15, 20, 30, 0.7);
-    backdrop-filter: var(--glass-effect);
-    -webkit-backdrop-filter: var(--glass-effect);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    padding: 0.75rem 1.5rem;
-    transition: var(--transition-soft);
+    padding: 1.5rem 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+/* Scrolled State */
+.navbar.scrolled {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar-content {
@@ -23,39 +26,33 @@
 }
 
 .navbar-logo {
-    font-size: 1.6rem;
-    font-weight: 800;
+    font-size: 1.8rem;
+    font-weight: 900;
     color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.5px;
 }
 
 .navbar-logo span { color: var(--accent-gold); }
 
 .navbar-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
-    margin-left: auto;
 }
 
 .navbar-links a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
+    color: var(--text-muted);
     font-weight: 500;
     font-size: 0.95rem;
-    transition: var(--transition-soft);
 }
 
-.navbar-links a:hover { color: var(--accent-gold); }
+.navbar-links a:hover { color: #fff; }
 
 .nav-apply-btn {
     background: var(--accent-gold);
     color: #000 !important;
     padding: 10px 24px;
-    border-radius: var(--radius-md);
+    border-radius: 50px;
     font-weight: 700 !important;
-    box-shadow: 0 8px 20px rgba(234, 179, 8, 0.2);
 }
 
 /* Mobile Toggle */
@@ -66,14 +63,15 @@
     .hamburger { display: block; }
     .navbar-links {
         position: absolute;
-        top: 80px;
-        right: 0;
-        background: rgba(10, 12, 18, 0.95);
+        top: 100%;
+        right: 2rem;
+        background: var(--bg-surface);
         flex-direction: column;
         width: 250px;
         padding: 2rem;
-        border-radius: var(--radius-md);
-        display: none; /* Controlled by JS state */
+        border-radius: var(--radius-xl);
+        display: none;
+        border: 1px solid var(--border);
     }
     .navbar-links.open { display: flex; }
 }
