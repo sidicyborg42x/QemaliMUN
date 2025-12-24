@@ -1,0 +1,80 @@
+/* frontend/src/pages/ApplyPage.css */
+.apply-page-wrapper {
+    padding: var(--section-spacing) 0;
+    display: flex;
+    justify-content: center;
+    background: var(--bg-primary);
+}
+
+.apply-card {
+    background-color: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+    max-width: 550px;
+    border-top: 4px solid var(--accent-gold);
+}
+
+.apply-card h2 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: var(--accent-gold);
+}
+
+.form-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary);
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 8px rgba(240, 165, 0, 0.2);
+}
+
+.submit-btn {
+    padding: 16px;
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-2px);
+}
+
+.status-message {
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.status-message.success { background: rgba(46, 204, 113, 0.1); color: var(--success); border: 1px solid var(--success); }
+.status-message.error { background: rgba(231, 76, 60, 0.1); color: var(--danger); border: 1px solid var(--danger); }

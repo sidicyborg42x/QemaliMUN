@@ -1,5 +1,7 @@
+// frontend/src/pages/ApplyPage.js
 import React, { useState } from 'react';
 import axiosInstance from '../api/axiosConfig';
+import './ApplyPage.css';
 
 const ApplyPage = () => {
     const [formData, setFormData] = useState({
@@ -23,23 +25,30 @@ const ApplyPage = () => {
     };
 
     return (
-        <div className="container" style={{ marginTop: '50px', maxWidth: '600px' }}>
-            <h2>Formulari i Aplikimit</h2>
-            {status && (
-                <p style={{ color: status.type === 'success' ? '#28a745' : '#dc3545', fontWeight: 'bold' }}>
-                    {status.text}
-                </p>
-            )}
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                <input name="full_name" placeholder="Emri i Plotë" value={formData.full_name} onChange={handleChange} required />
-                <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                <input name="school" placeholder="Shkolla" value={formData.school} onChange={handleChange} required />
-                <input name="grade" placeholder="Klasa/Viti" value={formData.grade} onChange={handleChange} required />
-                <textarea name="motivation" placeholder="Pse dëshironi të merrni pjesë?" rows="5" value={formData.motivation} onChange={handleChange} required />
-                <button type="submit" style={{ padding: '10px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-                    Dërgo Aplikimin
-                </button>
-            </form>
+        <div className="apply-page-wrapper">
+            <div className="apply-card">
+                <h2>Apliko Tani</h2>
+                <p className="form-subtitle">Bëhu pjesë e simpoziumit më të madh diplomatik.</p>
+                {status && <div className={`status-message ${status.type}`}>{status.text}</div>}
+                <form onSubmit={handleSubmit} className="apply-form">
+                    <div className="form-group">
+                        <input name="full_name" placeholder="Emri i Plotë" value={formData.full_name} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <input name="school" placeholder="Shkolla" value={formData.school} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <input name="grade" placeholder="Klasa/Viti" value={formData.grade} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <textarea name="motivation" placeholder="Pse dëshironi të merrni pjesë?" rows="5" value={formData.motivation} onChange={handleChange} required />
+                    </div>
+                    <button type="submit" className="submit-btn">Dërgo Aplikimin</button>
+                </form>
+            </div>
         </div>
     );
 };
