@@ -1,84 +1,102 @@
 /* frontend/src/components/Navbar.css */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
+    height: 85px;
+    background: rgba(2, 6, 23, 0.85); /* Dark Midnight Transparent */
+    backdrop-filter: blur(15px); /* Professional Blur */
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: -1px;
-  color: #fff;
-  text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -1px;
 }
 
-.nav-logo span { color: var(--accent-gold); }
+.nav-logo span { color: var(--accent-color); }
 
-/* Desktop Menu: Beautiful spacing */
+/* DESKTOP VIEW: Wide and Airy */
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem; /* Wide spacing for PC elegance */
+    list-style: none;
 }
 
 .nav-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: 0.2s;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s ease;
 }
 
-.nav-links a:hover { color: var(--accent-gold); }
+.nav-links a:hover { color: var(--accent-color); }
 
 .nav-apply-btn {
-  background: var(--accent-gold);
-  color: var(--primary-dark) !important;
-  padding: 0.6rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 700 !important;
+    background: var(--accent-color);
+    color: #020617 !important;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 700 !important;
 }
 
-/* Mobile Toggle: Hidden on PC */
-.nav-toggle { display: none; cursor: pointer; }
-
-@media (max-width: 992px) {
-  .nav-toggle { display: block; }
-  
-  .nav-links {
-    position: fixed;
-    top: 80px;
-    left: -100%;
+/* MOBILE VIEW: Hidden on PC */
+.nav-toggle {
+    display: none;
     flex-direction: column;
-    background: #020617;
-    width: 100%;
-    height: calc(100vh - 80px);
-    padding: 3rem 0;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    gap: 2.5rem;
-  }
+    gap: 6px;
+    cursor: pointer;
+}
 
-  .nav-links.active { left: 0; }
-  
-  .nav-links a { font-size: 1.25rem; color: #fff; }
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.4s ease-in-out;
+    border-radius: 4px;
+}
+
+/* MEDIA QUERY: The Mobile Transformation */
+@media (max-width: 992px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+        position: fixed;
+        top: 85px;
+        left: -100%; /* Slide out of view */
+        flex-direction: column;
+        background: #020617; /* Solid dark background for mobile menu */
+        width: 100%;
+        height: 100vh;
+        padding-top: 4rem;
+        gap: 3rem;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-links.active { left: 0; } /* Slide into view */
+
+    .nav-links a { font-size: 1.5rem; }
+
+    /* Hamburger Animation to X */
+    .nav-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .nav-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .nav-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 }
