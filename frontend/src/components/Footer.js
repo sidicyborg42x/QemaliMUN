@@ -20,8 +20,11 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
+            {/* Centered Bottom Section */}
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Qemal Stafa Model United Nations. All rights reserved.</p>
+                <div className="container">
+                    <p>&copy; {new Date().getFullYear()} Qemal Stafa Model United Nations. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     );
