@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+/* frontend/src/components/Navbar.js */
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+    };
+
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
     };
 
     return (
@@ -16,11 +27,18 @@ const Navbar = () => {
                     QS<span>MUN</span>
                 </Link>
 
-                {/* Hamburger Icon */}
-                <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
+                <div className="navbar-actions">
+                    {/* Theme Toggle Button */}
+                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                        {theme === 'light' ? '🌙' : '☀️'}
+                    </button>
+
+                    {/* Hamburger Icon */}
+                    <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                    </div>
                 </div>
 
                 {/* Navbar Links */}

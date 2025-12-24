@@ -1,15 +1,17 @@
+/* frontend/src/index.css */
 :root {
-  /* Modern Professional Palette for QSMUN */
+  /* Modern Professional Palette for QSMUN - Light Mode (Default) */
   --primary-color: #0f172a; /* Midnight Blue */
   --primary-light: #1e293b;
   --secondary-color: #334155;
   --accent-color: #fbbf24; /* Warm Gold */
   --accent-hover: #d97706;
   
-  --background-light: #f8fafc;
+  --background-color: #f8fafc;
+  --navbar-bg: rgba(255, 255, 255, 0.95);
   --white: #ffffff;
-  --text-dark: #0f172a;
-  --text-light: #64748b;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
   
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
@@ -17,17 +19,34 @@
   --radius: 12px;
 }
 
+[data-theme='dark'] {
+  /* Dark Mode Overrides */
+  --primary-color: #f8fafc;
+  --primary-light: #fbbf24;
+  --secondary-color: #94a3b8;
+  --accent-color: #fbbf24;
+  
+  --background-color: #0f172a;
+  --navbar-bg: rgba(15, 23, 42, 0.95);
+  --white: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+}
+
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--background-light);
-  color: var(--text-dark);
+  background-color: var(--background-color);
+  color: var(--text-main);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4 {
-  color: var(--primary-color);
+  color: var(--text-main);
   font-weight: 800;
   letter-spacing: -0.5px;
   margin-bottom: 1rem;
