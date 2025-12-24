@@ -1,51 +1,23 @@
-/* frontend/src/App.css */
-:root {
-  /* Core Colors */
-  --bg-primary: #0a0a0a;   /* Deepest black */
-  --bg-secondary: #141414; /* Card backgrounds */
-  --bg-tertiary: #1f1f1f;  /* Input fields */
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3; 
-  --accent-gold: #f0a500;    /* QemaliMUN Gold */
-  --accent-gold-hover: #d18f00; 
-  --danger: #e74c3c;         
-  --success: #2ecc71;        
-
-  /* Spacing & Structure */
-  --section-spacing: 80px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 12px;
-  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.7);
-  --shadow-accent: 0 4px 20px rgba(240, 165, 0, 0.2); 
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
 .App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.App-header, .App-footer {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.App-header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
 }
 
 main {
-  flex: 1;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-h2 {
-  font-size: 2.8rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 800;
+    flex-grow: 1;
 }
