@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import EventCard from '../components/EventCard';
 import './HomePage.css';
+// Import the logo
 import AnniversaryLogo from './qemal100.png'; 
 
 const HomePage = () => {
@@ -28,6 +29,7 @@ const HomePage = () => {
             <section className="hero">
                 <div className="container hero-content fade-in">
                     
+                    {/* Anniversary Badge - Closer to Title */}
                     <Link to="/about" className="hero-anniversary-badge">
                         <img src={AnniversaryLogo} alt="100 Vjet Qemal Stafa" />
                         <span className="badge-text">100 Vjet Histori</span>
@@ -35,7 +37,7 @@ const HomePage = () => {
 
                     <h1>QSMUN</h1>
                     <p className="hero-subtitle">Model United Nations i Gjimnazit "Qemal Stafa"</p>
-                    <a href="#events" className="btn-hero">Zbulo Eventet</a>
+                    <a href="#events" className="btn btn-hero">Zbulo Eventet</a>
                 </div>
             </section>
 
@@ -46,14 +48,21 @@ const HomePage = () => {
                 </div>
 
                 {loading ? (
-                    <div className="loading-container"><div className="spinner"></div></div>
-                ) : (
+                    <div className="loading-container">
+                        <div className="spinner"></div>
+                        <p>Duke ngarkuar agjendën...</p>
+                    </div>
+                ) : events.length > 0 ? (
                     <div className="events-grid">
                         {events.map((event, index) => (
-                            <div key={event.id} className="fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                            <div key={event.id} style={{animationDelay: `${index * 0.1}s`}} className="fade-in">
                                 <EventCard event={event} />
                             </div>
                         ))}
+                    </div>
+                ) : (
+                    <div className="no-events fade-in">
+                        <p>Nuk ka evente të planifikuara për momentin.</p>
                     </div>
                 )}
             </section>
