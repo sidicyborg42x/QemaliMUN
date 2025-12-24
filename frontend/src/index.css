@@ -1,22 +1,27 @@
 /* frontend/src/index.css */
 :root {
+  /* Sophisticated Midnight Palette */
   --bg-deep: #03060b;
   --bg-surface-1: #0a1120;
   --bg-surface-2: #131c31;
   --bg-surface-3: #1e293b;
   
+  /* Refined Gold */
   --accent-gold: #d4af37;    
   --accent-bright: #f6e05e;  
   --accent-glow: rgba(212, 175, 55, 0.15);
   
+  /* Typography */
   --text-main: #f1f5f9;      
   --text-muted: #94a3b8;     
   --text-dim: #64748b;
 
-  --glass: rgba(10, 17, 32, 0.75);
+  /* Effects */
+  --glass: rgba(10, 17, 32, 0.85);
   --border: rgba(255, 255, 255, 0.05);
   --border-bright: rgba(255, 255, 255, 0.12);
   
+  /* System */
   --shadow-sm: 0 10px 30px -10px rgba(0,0,0,0.5);
   --shadow-lg: 0 20px 50px -15px rgba(0,0,0,0.7);
   --radius-lg: 16px;
@@ -35,6 +40,7 @@ body {
   background-color: var(--bg-deep);
   color: var(--text-main);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
@@ -47,6 +53,16 @@ body {
 h1, h2, h3 {
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .btn {
@@ -59,11 +75,13 @@ h1, h2, h3 {
   border-radius: var(--radius-full);
   font-weight: 700;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
   transition: var(--transition-smooth);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   background: #fff;
-  box-shadow: 0 10px 20px var(--accent-glow);
+  box-shadow: 0 10px 25px var(--accent-glow);
 }

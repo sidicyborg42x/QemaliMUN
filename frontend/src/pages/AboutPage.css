@@ -1,6 +1,6 @@
 /* frontend/src/pages/AboutPage.css */
 .about-page {
-    padding: 120px 0;
+    padding: 140px 0 80px;
 }
 
 .about-header {
@@ -9,11 +9,11 @@
 }
 
 .about-header h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin: 1rem 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     background: linear-gradient(180deg, #fff 0%, var(--text-muted) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
 }
 
 .about-section {
@@ -21,32 +21,21 @@
 }
 
 .about-section h2 {
-    font-size: 2rem;
-    color: var(--accent-gold);
+    font-size: 2.2rem;
     margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-}
-
-.about-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px; left: 0;
-    width: 60px; height: 3px;
-    background: var(--accent-gold);
+    color: var(--accent-gold);
 }
 
 .about-section p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
-    max-width: 800px;
+    max-width: 850px;
     line-height: 1.8;
 }
 
-/* Advantages Grid */
 .advantages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
@@ -59,21 +48,14 @@
 }
 
 .advantage-item:hover {
-    border-color: var(--accent-gold);
     background: var(--bg-surface-2);
+    border-color: var(--accent-gold);
     transform: translateY(-10px);
 }
 
 .advantage-item h3 {
     color: #fff;
     margin-bottom: 1rem;
-}
-
-/* Leadership Grid */
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
 }
 
 .leader-card {
@@ -91,16 +73,15 @@
 }
 
 .leader-role {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
     color: var(--accent-gold);
-    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
     font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 .leader-name {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.5rem;
     color: #fff;
 }
