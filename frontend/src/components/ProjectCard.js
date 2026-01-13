@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProjectCard.css';
 
-// You can keep the prop name as 'project' or change it to 'event' everywhere
+
 const ProjectCard = ({ project: event }) => { 
     return (
         <div className="project-card">
