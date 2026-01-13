@@ -9,7 +9,6 @@ main {
   flex-grow: 1;
 }
 
-/* Ensure sections have consistent breathing room */
 section {
   padding: 100px 0;
 }
