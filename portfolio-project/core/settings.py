@@ -7,18 +7,14 @@ import os
 import dj_database_url
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# On Render, you will set this as an Environment Variable.
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-bh#)2lzm#o%go#lk3*#u!t3=#b@k#2h$qc=_!t!4=tmk3aj1ot')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Set DEBUG to False in your Render Environment Variables.
+# it sets DEBUG to False in the Render Environment Variables.
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-# Allow your Render API URL and your Vercel frontend URL
+# Allows the Render API URL and your Vercel frontend URL
 ALLOWED_HOSTS = [
     '.onrender.com', 
     'localhost', 
@@ -53,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS settings to allow your Vercel frontend to communicate with this API
+# CORS settings to allow the Vercel frontend to communicate with this API
 CORS_ALLOWED_ORIGINS = [
     "https://qsmun.vercel.app",
     "http://localhost:3000",
