@@ -3,7 +3,7 @@ from django.db import models
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    location = models.CharField(max_length=200, default="Qemal Stafa") # Updated location
+    location = models.CharField(max_length=200, default="Qemal Stafa") # Updated location to fix the isamil qemali school bug
     date = models.DateTimeField()
     image = models.ImageField(upload_to='events/', blank=True, null=True)
     registration_link = models.URLField(blank=True, null=True)
