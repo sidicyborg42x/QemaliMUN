@@ -121,7 +121,7 @@
         left: 0;
     }
 
-    /* Keep toggle visible next to hamburger on mobile */
+    /* toggle visible next to hamburger on mobile */
     .theme-toggle svg {
         width: 22px;
         height: 22px;
