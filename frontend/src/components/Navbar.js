@@ -33,7 +33,7 @@ const Navbar = () => {
                     <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
                         <Link to="/" onClick={() => setIsOpen(false)}>Kreu</Link>
                         <Link to="/about" onClick={() => setIsOpen(false)}>Rreth Nesh</Link>
-                        <Link to="/game" onClick={() => setIsOpen(false)}>Simulator</Link>
+                        <Link to="/game" onClick={() => setIsOpen(false)}>Ragebaitor</Link>
                         <Link to="/apply" onClick={() => setIsOpen(false)}>Apliko</Link>
                     </div>
 
