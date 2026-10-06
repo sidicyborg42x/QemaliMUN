@@ -88,15 +88,15 @@ const AboutPage = () => {
                         </div>
                         <div className="leader-card">
                             <div className="leader-role">Zëvëndës Presidente</div>
-                            <div className="leader-name">Era Karaj</div>
+                            <div className="leader-name">Ema Metaraku</div>
                         </div>
                         <div className="leader-card">
                             <div className="leader-role">Head of Academics</div>
-                            <div className="leader-name">Greis Shqiponja</div>
+                            <div className="leader-name">Ema Metaraku</div>
                         </div>
                         <div className="leader-card">
                             <div className="leader-role">Head of Media</div>
-                            <div className="leader-name">Klajdi Kamenica</div>
+                            <div className="leader-name">Nargisa Karapici</div>
                         </div>
                     </div>
                 </section>
